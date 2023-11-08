@@ -6,8 +6,6 @@
 
 - Convert between a wide range of unit types including temperature, length, time, mass, and digital storage.
 - Easily specify the number of decimal places for rounding the result.
-- Display a help message to guide you through the conversion process.
-- Check the version information of the tool.
 
 ## Table of Contents
 
@@ -91,7 +89,3 @@ unicon [OPTIONS] VALUE from <UNIT> to <UNIT>
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-**Note:** Replace `<repository-url>` with the URL of the repository where you cloned the code. Make sure to have the required dependencies installed to build the tool.
