@@ -109,6 +109,7 @@ double convertUnit(double value, Unit from, Unit to);
 Unit matchArgument(const char *arg);
 void displayHelp();
 void displayVersion();
+void displayUnits();
 
 int main(int argc, char **argv) {
     int opt;
@@ -120,15 +121,17 @@ int main(int argc, char **argv) {
         return 0;
     }
 
+    static const char* const short_options = "r:s:hv";
     static struct option long_options[] = {
         {"round", required_argument, 0, 'r'},
+        {"show", no_argument, 0, 's'},
         {"help", no_argument, 0, 'h'},
         {"version", no_argument, 0, 'v'},
         {NULL, 0, NULL, 0}
     };
 
     // Command line option parsing
-    while ((opt = getopt_long(argc, argv, "r:hv", long_options, NULL)) != -1) {
+    while ((opt = getopt_long(argc, argv, short_options, long_options, NULL)) != -1) {
         switch (opt) {
             case 'r':
                 round_places = atoi(optarg);
@@ -139,8 +142,11 @@ int main(int argc, char **argv) {
             case 'v':
                 displayVersion();
                 return 0;
+            case 's':
+                displayUnits();
+                return 0;
             default:
-                displayHelp();
+                fprintf(stderr, "Use '-h, --help' for help.\n");
                 return 1;
         }
     }
@@ -295,8 +301,53 @@ void displayHelp() {
     printf("Convert between various units.\n\n");
     printf("Options:\n");
     printf("\t-r, --round=PLACES   Round the result to the specified number of decimal places.\n");
+    printf("\t-s, --show           Show the full table of supported units.\n");
     printf("\t-h, --help           Display this help message and exit.\n");
     printf("\t-v, --version        Display version information and exit.\n");
+}
+
+void displayUnits() {
+    printf("Supported units:\n");
+    printf("TEMPERATURE:\n");
+    printf("\t- Celsius\n");
+    printf("\t- Fahrenheit\n");
+    printf("\t- Kelvin\n");
+    printf("LENGTH:\n");
+    printf("\t- Millimeters\n");
+    printf("\t- Centimeters\n");
+    printf("\t- Decimeters\n");
+    printf("\t- Meters\n");
+    printf("\t- Decameters\n");
+    printf("\t- Hectometers\n");
+    printf("\t- Kilometers\n");
+    printf("\t- Miles\n");
+    printf("\t- Inches\n");
+    printf("\t- Feet\n");
+    printf("TIME:\n");
+    printf("\t- Milliseconds\n");
+    printf("\t- Seconds\n");
+    printf("\t- Minutes\n");
+    printf("\t- Hours\n");
+    printf("\t- Days\n");
+    printf("\t- Months\n");
+    printf("\t- Years\n");
+    printf("MASS:\n");
+    printf("\t- Milligrams\n");
+    printf("\t- Centigrams\n");
+    printf("\t- Decigrams\n");
+    printf("\t- Grams\n");
+    printf("\t- Decagrams\n");
+    printf("\t- Hectograms\n");
+    printf("\t- Kilograms\n");
+    printf("\t- Pounds\n");
+    printf("DIGITAL STORAGE:\n");
+    printf("\t- Bytes\n");
+    printf("\t- Kilobytes\n");
+    printf("\t- Megabytes\n");
+    printf("\t- Gigabytes\n");
+    printf("\t- Terabytes\n");
+    printf("\t- Petabytes\n");
+    printf("\t- Exabytes\n");
 }
 
 // Function to display the version information
