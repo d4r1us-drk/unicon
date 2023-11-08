@@ -122,7 +122,7 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    static const char* const short_options = "r:s:hv";
+    static const char* const short_options = "r:shv";
     static struct option long_options[] = {
         {"round", required_argument, 0, 'r'},
         {"show", no_argument, 0, 's'},
