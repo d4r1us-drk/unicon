@@ -79,7 +79,8 @@ UnitTable unit_table[] = {
     {LENGTH, FEET, "feet", 3.28084},
     // Time units
     {TIME, SECONDS, "seconds", 1.0},
-    {TIME, MILLISECONDS, "milliseconds", 1000.0}, {TIME, MINUTES, "minutes", 1.0 / 60.0},
+    {TIME, MILLISECONDS, "milliseconds", 1000.0},
+    {TIME, MINUTES, "minutes", 1.0 / 60.0},
     {TIME, HOURS, "hours", 1.0 / 3600.0},
     {TIME, DAYS, "days", 1.0 / 86400.0},
     {TIME, MONTHS, "months", 1.0 / 2592000.0},
