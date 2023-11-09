@@ -1,25 +1,27 @@
 # unicon - Unit Conversion Tool
 
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Bulding](#building)
+- [Usage](#usage)
+- [Options](#options)
+- [Examples](#examples)
+- [License](#license)
+
+## Introduction
 **unicon** is a command-line unit conversion tool that allows you to easily
 convert values between various units such as temperature, length, time, mass,
 and digital storage. This tool is designed to be user-friendly and flexible,
 allowing you to convert units with precision.
 
 ## Features
-
 - Convert between a wide range of unit types including temperature, length,
   time, mass, and digital storage.
 - Easily specify the number of decimal places for rounding the result.
 
-## Table of Contents
-
-- [Installation](#installation)
-- [Usage](#usage)
-- [Options](#options)
-- [Examples](#examples)
-- [License](#license)
-
-## Installation
+## Building
 
 This tool is provided as source code and can be built using `make`. Here
 are the build instructions:
@@ -27,7 +29,7 @@ are the build instructions:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/d4r1us-drk/unicon
+   git clone https://github.com/d4r1us-drk/unicon.git
    ```
 
 2. Change the directory to the cloned repository:
@@ -62,7 +64,8 @@ unicon [OPTIONS] VALUE from <UNIT> to <UNIT>
 
 ## Options
 
-- `-r, --round=PLACES`: Round the result to the specified number of decimal places.
+- `-r, --round=PLACES`: Round the result to the specified number of decimal
+  places.
 - `-h, --help`: Display the help message and exit.
 - `-v, --version`: Display version information and exit.
 
