@@ -47,7 +47,7 @@ typedef enum {
     // Time units
     SECONDS, MILLISECONDS, MINUTES, HOURS, DAYS, MONTHS, YEARS,
     // Mass units
-    GRAMS, CENTIGRAMS, DECIGRAMS, DECAGRAMS, HECTOGRAMS, MILLIGRAMS, KILOGRAMS, POUNDS,
+    GRAMS, CENTIGRAMS, DECIGRAMS, DECAGRAMS, HECTOGRAMS, MILLIGRAMS, KILOGRAMS, POUNDS, OUNCES,
     // Digital storage units
     BYTES, KILOBYTES, MEGABYTES, GIGABYTES, TERABYTES, PETABYTES, EXABYTES
 } Unit;
@@ -94,6 +94,7 @@ UnitTable unit_table[] = {
     {MASS, MILLIGRAMS, "milligrams", 1000.0},
     {MASS, KILOGRAMS, "kilograms", 0.001},
     {MASS, POUNDS, "pounds", 0.00220462},
+    {MASS, OUNCES, "ounces", 0.03527396},
     // Digital storage units
     {DIGITAL, BYTES, "bytes", 1.0},
     {DIGITAL, KILOBYTES, "kilobytes", 1.0 / 1024.0},
@@ -341,6 +342,7 @@ void displayUnits() {
     printf("\t- Hectograms\n");
     printf("\t- Kilograms\n");
     printf("\t- Pounds\n");
+    printf("\t- Ounces\n");
     printf("DIGITAL STORAGE:\n");
     printf("\t- Bytes\n");
     printf("\t- Kilobytes\n");
